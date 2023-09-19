@@ -20,5 +20,5 @@ pip install -U -r requirements.txt
 To start your miner just execute this command.  Note you should adjust account at the top of the file to be your ethereum address if you want to claim your blocks and superblocks later
 
 ```bash
-python3 miner.py
+./miner.sh --help
 ```
