@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Variable 'core' with the number of CPU cores
 core=$(cat /proc/cpuinfo | grep -E '^processor' | wc -l)
 
@@ -13,7 +12,7 @@ kill_session=false
 function display_help() {
   echo "Script for launching a screen session with htop and/or python3 miner.py."
   echo "Usage: $0 [-c NUMBER] [-k] [-h|--help]"
-  echo "  -c NUMBER     How many instances of python3 miner.py to run (default: $runs if u run the script without parameters)."
+  echo "  -c NUMBER     How many instances of python3 miner.py to run (default: $runs)."
   echo "  -k            Kill the screen session and all processes without displaying a summary."
   echo "  -h, --help    Display this help message."
 }
@@ -46,5 +45,5 @@ fi
 
 # If the -k flag is set to true, kill the session and processes
 if [ "$kill_session" = true ]; then
-  killall -v screen
+  pkill -f 'miner_session'
 fi
