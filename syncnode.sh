@@ -1,5 +1,5 @@
 #!/bin/bash
-# Download fresh script 
+# Download fresh script
 clear
 curl -o syncnode.py -LJO https://github.com/jacklevin74/xenminer/raw/main/syncnode.py
 echo
@@ -10,5 +10,8 @@ if [ -z "$1" ]; then
 fi
 
 account="$1"
+# Screen session name
+session="node_session"
+
 echo "Starting synchronization using account: $account"
-while sleep 60; do python3 syncnode.py "$account"; done
+screen -dmS "$session" bash -c "while sleep 60; do python3 syncnode.py \"$account\"; done"
