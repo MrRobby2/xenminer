@@ -45,5 +45,5 @@ fi
 
 # If the -k flag is set to true, kill the session and processes
 if [ "$kill_session" = true ]; then
-  pkill -f "session"
+  pkill -f "$session"
 fi
