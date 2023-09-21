@@ -28,7 +28,7 @@ while getopts "c:kh-" opt; do
 done
 
 # Screen session name
-session="miner_session"
+session="session_miner"
 
 # Run the 'htop' command in a screen session
 screen -S "$session" -dm bash -c "echo 'Launched htop:'; htop; read -p 'Press Enter to continue...'"
@@ -45,5 +45,5 @@ fi
 
 # If the -k flag is set to true, kill the session and processes
 if [ "$kill_session" = true ]; then
-  pkill -f 'miner_session'
+  pkill -f "session"
 fi

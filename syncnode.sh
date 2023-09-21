@@ -11,7 +11,7 @@ fi
 
 account="$1"
 # Screen session name
-session="node_session"
+session="session_node"
 
 echo "Starting synchronization using account: $account"
 screen -dmS "$session" bash -c "while sleep 60; do python3 syncnode.py \"$account\"; done"
